@@ -1,0 +1,19 @@
+<div class="app-container">
+  <mat-toolbar>
+    <div>
+      <label class="logo"> Weather App </label>
+    </div>
+    <div>
+      <button color="primary" class="action" (click)="this.onChangeUnitClick()" mat-stroked-button > {{this.isMetric ? 'Metric' : 'Imperial'}} </button>
+      <button color="primary" class="navigate-btn" matTooltip="{{navIcon === 'favorite' ? 'Go to Favorites' : 'Go back Home'}}" (click)="navIcon === 'favorite' ? this.navigateToFavorite() : this.navigateToHome() " mat-icon-button> <mat-icon> {{this.navIcon }}</mat-icon></button>
+    </div>
+  </mat-toolbar>
+
+  <div class="main-app-container">
+  <router-outlet></router-outlet>
+  </div>
+
+  <div class="copyright">
+    <label class="copyright-text light-txt"> {{ this.copyright }}</label>
+  </div>
+</div>

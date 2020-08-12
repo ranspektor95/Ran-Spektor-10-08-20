@@ -1,0 +1,27 @@
+<div class="mini-weather-item-inner-container">
+
+  <div class="mini-weather-info-container layout-wrap-space-between">
+    <p class="mini-weather-title info"> {{this.forecast.Date | date: 'dd/mh' }}</p>
+    <div class="light-txt">
+    <p> {{ 'Max ' + this.forecast.Temperature.Maximum.Value + ' '+ this.forecast.Temperature.Maximum.Unit }}</p>
+    <p> {{ 'Min ' + this.forecast.Temperature.Minimum.Value + ' '+ this.forecast.Temperature.Minimum.Unit }}</p>
+    </div>
+  </div>
+
+    <div class="double-flex-container layout-wrap-space-between">
+      <div class="flex-item">
+        <p class="mini-weather-title"> Day</p>
+        <mat-icon class="icon" svgIcon="{{this.getWeatherIcon(this.forecast.Day.Icon)}}"> </mat-icon>
+        <p class="light-txt">{{this.forecast.Day.IconPhrase}}</p>
+      </div>
+
+      <div class="flex-item">
+        <p class="mini-weather-title"> Night</p>
+        <mat-icon class="icon" svgIcon="{{this.getWeatherIcon(this.forecast.Night.Icon)}}"> </mat-icon>
+        <p class="light-txt">{{this.forecast.Night.IconPhrase}}</p>
+      </div>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,19 @@
+<div class="weather-item-inner-container">
+
+  <div class="weather-item-location-info-container layout-row-space-between">
+    <div>
+    <p class="city"> {{this.weatherItem.location.LocalizedName}} </p>
+    <p class="country" > {{this.weatherItem.location.Country.LocalizedName}} </p>
+    </div>
+    <mat-icon (click)="onFavoriteClick()" class="icon app-pointer">{{this.getFavoriteIcon()}}</mat-icon>
+  </div>
+
+
+
+  <div class="mini-weather-item-container layout-wrap-center">
+
+    <weather-app-mini-weather-item *ngFor="let forecast of this.weatherItem.dailyForecasts" [forecast]="forecast"> </weather-app-mini-weather-item>
+
+  </div>
+
+</div>

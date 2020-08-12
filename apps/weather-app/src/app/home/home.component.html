@@ -1,0 +1,18 @@
+<mat-card class="app-card scroll">
+
+  <div class="search-container">
+    <weather-app-search (eventSearchResult)="onSearchResultEvent($event)"> </weather-app-search>
+  </div>
+
+
+  <div class="weather-item-container" *ngIf="!this.isNoResult && this.defaultLocation?.dailyForecasts?.length > 0">
+    <weather-app-weather-item [weatherItem]="this.searchedLocation ? this.searchedLocation : this.defaultLocation"> </weather-app-weather-item>
+    <label *ngIf="!searchedLocation" class="title light-txt"> Last update at: {{ this.lastUpdateDefaultLocation | date: 'hh:mm a' }}. <label (click)="this.onUpdateDefaultClick()" class="app-pointer hover-underline">Update Now</label></label>
+  </div>
+
+  <div *ngIf="this.isNoResult" class="weather-item-container">
+    <p class="title"> Sorry, can't find any result. </p>
+  </div>
+
+</mat-card>
+

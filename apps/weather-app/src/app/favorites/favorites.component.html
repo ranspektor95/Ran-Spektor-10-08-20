@@ -1,0 +1,16 @@
+<mat-card class="app-card scroll">
+
+  <p class="favorite-title">Favorites</p>
+  <label class="title light-txt"> Last update at: {{ this.lastUpdate | date: 'hh:mm a' }}. <label (click)="this.onUpdateClick()" class="app-pointer hover-underline">Update Now</label></label>
+
+
+  <div *ngIf="favorites?.length > 0 && favorites[0].dailyForecasts?.length > 0" class="favorite-mini-weather-item-container layout-wrap-center">
+    <div *ngFor="let weatherItem of this.favorites" class="mini-weather-item-container">
+      <div class="layout-row">
+        <mat-icon matTooltip="Remove from Favorites" (click)="onFavoriteClick(weatherItem)" class="icon app-pointer">favorite</mat-icon> <p matTooltip="See Full Forecast" (click)="this.onFullForecastClick(weatherItem)" class="weather-item-title app-pointer hover-underline"> {{weatherItem.location.LocalizedName}}</p>
+      </div>
+      <weather-app-mini-weather-item *ngIf="weatherItem?.dailyForecasts?.length > 0" [forecast]="weatherItem.dailyForecasts[0]"> </weather-app-mini-weather-item>
+    </div>
+  </div>
+
+</mat-card>

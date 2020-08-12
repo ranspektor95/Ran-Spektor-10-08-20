@@ -1,0 +1,17 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+
+.search-container{
+  margin: 0 auto;
+  max-width: 550px;
+}
+
+.weather-item-container{
+  margin: 25px auto;
+  max-width: 1200px;
+
+  .title{
+    text-align: center;
+  }
+}

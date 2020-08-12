@@ -1,0 +1,23 @@
+@import './libs/themes/common-theme';
+@import './libs/themes/global-styles';
+
+
+
+.favorite-title{
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.favorite-mini-weather-item-container {
+
+  .mini-weather-item-container {
+    flex: 0 1 290px;
+    margin: 15px;
+
+    .weather-item-title {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+
+}

@@ -1,0 +1,27 @@
+<div class="search-inner-container">
+
+  <mat-form-field appearance="fill" class="address-form-field">
+    <input
+      placeholder="Search for city"
+      [formControl]="this.weatherSearchControl"
+      matInput
+      (keyup.enter)="this.onSearchClick()"
+      onkeypress="return (event.charCode >= 65 && event.charCode <= 90)
+                                     || (event.charCode >= 97 && event.charCode <= 122)
+                                     || event.charCode === 45 || event.charCode === 39 || event.charCode === 96 || event.charCode === 44
+                                     || event.charCode === 46
+                                     || event.charCode === 32"
+    />
+  </mat-form-field>
+
+  <div class="search-actions layout-wrap-space-between">
+    <button [matMenuTriggerFor]="menu" class="search-action-btn" mat-stroked-button> Choose from Favorites </button>
+    <button [disabled]="this.weatherSearchControl?.value?.length === 0 || !this.weatherSearchControl.valid " (click)="this.onSearchClick()" class="search-action-btn" mat-flat-button color="primary"> Search <mat-icon>search</mat-icon></button>
+  </div>
+
+</div>
+
+<mat-menu #menu="matMenu">
+  <button *ngFor="let favorite of this.favorites" (click)="onWeatherItemSelect(favorite)" mat-menu-item> {{favorite.location.LocalizedName}}</button>
+</mat-menu>
+
