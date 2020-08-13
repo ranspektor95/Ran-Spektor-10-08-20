@@ -1,12 +1,16 @@
 {
   "name": "weather-app",
   "version": "0.0.0",
+  "engines": {
+    "yarn": "1.22.4",
+    "node": "12.18.3"
+  },
   "license": "MIT",
   "scripts": {
     "ng": "nx",
-    "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
+    "postinstall": "ng build --output-path angularapp --aot --prod",
     "nx": "nx",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "nx workspace-lint && ng lint",
@@ -31,8 +35,10 @@
   "dependencies": {
     "@angular/animations": "^10.0.0",
     "@angular/cdk": "^10.1.2",
+    "@angular/cli": "~10.0.0",
     "@angular/common": "^10.0.0",
     "@angular/compiler": "^10.0.0",
+    "@angular/compiler-cli": "^10.0.0",
     "@angular/core": "^10.0.0",
     "@angular/forms": "^10.0.0",
     "@angular/material": "^10.1.2",
@@ -43,7 +49,10 @@
     "@ngrx/effects": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@nrwl/angular": "10.0.10",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.5.5",
+    "typescript": "~3.9.3",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
