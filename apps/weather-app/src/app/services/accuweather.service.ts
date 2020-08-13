@@ -26,13 +26,13 @@ export class AccuweatherService {
 
   getFiveDaysForecastByLocationKey(locationKey : string) : Observable<any>{
       return this.httpClient.get<any>(
-        FIVE_DAYS_FORECAST_BY_LOCATION_KEY_URL + '/' + locationKey, { params: new HttpParams().append('apikey', ACCU_WEATHER_KEY).append('metric', this.isMetric ? 'true' : 'false') }
+        FIVE_DAYS_FORECAST_BY_LOCATION_KEY_URL + '/' + locationKey, { params: new HttpParams().append('apikey', ACCU_WEATHER_KEY.key).append('metric', this.isMetric ? 'true' : 'false') }
       )
   }
 
   searchAutoComplete(searchValue : string) : Observable<any> {
     return this.httpClient.get<any>(
-      AUTO_COMPLETE_SEARCH_URL, { params: new HttpParams().append('apikey', ACCU_WEATHER_KEY).append('q', searchValue) }
+      AUTO_COMPLETE_SEARCH_URL, { params: new HttpParams().append('apikey', ACCU_WEATHER_KEY.key).append('q', searchValue) }
     )
   }
 

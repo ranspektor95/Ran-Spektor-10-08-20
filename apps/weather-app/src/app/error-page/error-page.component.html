@@ -4,7 +4,11 @@
     Oops! Something went wrong
   </label>
 
+  <mat-form-field class="key-field" appearance="outline">
+    <input matInput placeholder="Maybe try another key" [formControl]="this.keyControl">
+  </mat-form-field>
+
   <div class="error-page-action-container">
-    <button class="error-page-action" mat-flat-button color="primary" (click)="onRetryClick()">Please try again</button>
+    <button class="error-page-action" mat-flat-button color="primary" (click)="onRetryClick()">Try again</button>
   </div>
 </div>

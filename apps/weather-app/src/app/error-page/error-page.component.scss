@@ -7,7 +7,6 @@
   place-items: center;
   width: 100%;
   height: 100%;
-  padding: 10px;
 }
 
 .error-page-container {
@@ -15,7 +14,7 @@
   border: 1px solid map-get($app-foreground, border);
   background-color: white;
   padding: 25px;
-  height: 300px;
+  height: 335px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -23,6 +22,12 @@
 
   .logo {
     height: 85px;
+  }
+
+  .key-field{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
   }
 
   .error-page-title {
